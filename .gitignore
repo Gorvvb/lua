@@ -13,3 +13,11 @@ testes/libs/all
 
 temp
 lua
+
+.vs/
+*.sln
+*.slnx
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.csproj
