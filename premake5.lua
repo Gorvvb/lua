@@ -4,49 +4,56 @@ project "Lua"
 	cdialect "C11"
 	staticruntime "off"
 
+	location "%{wks.location}/Waffle/vendor/lua"
+
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
 
 	files
 	{
-		"src/lapi.c",
-		"src/lauxlib.c",
-		"src/lbaselib.c",
-		"src/lcode.c",
-		"src/lcorolib.c",
-		"src/lctype.c",
-		"src/ldblib.c",
-		"src/ldebug.c",
-		"src/ldo.c",
-		"src/ldump.c",
-		"src/lfunc.c",
-		"src/lgc.c",
-		"src/linit.c",
-		"src/liolib.c",
-		"src/llex.c",
-		"src/lmathlib.c",
-		"src/lmem.c",
-		"src/loadlib.c",
-		"src/lobject.c",
-		"src/lopcodes.c",
-		"src/loslib.c",
-		"src/lparser.c",
-		"src/lstate.c",
-		"src/lstring.c",
-		"src/lstrlib.c",
-		"src/ltable.c",
-		"src/ltablib.c",
-		"src/ltm.c",
-		"src/lundump.c",
-		"src/lutf8lib.c",
-		"src/lvm.c",
-		"src/lzio.c",
-		"src/**.h"
+		"lapi.c",
+		"lauxlib.c",
+		"lbaselib.c",
+		"lcode.c",
+		"lcorolib.c",
+		"lctype.c",
+		"ldblib.c",
+		"ldebug.c",
+		"ldo.c",
+		"ldump.c",
+		"lfunc.c",
+		"lgc.c",
+		"linit.c",
+		"liolib.c",
+		"llex.c",
+		"lmathlib.c",
+		"lmem.c",
+		"loadlib.c",
+		"lobject.c",
+		"lopcodes.c",
+		"loslib.c",
+		"lparser.c",
+		"lstate.c",
+		"lstring.c",
+		"lstrlib.c",
+		"ltable.c",
+		"ltablib.c",
+		"ltm.c",
+		"lundump.c",
+		"lutf8lib.c",
+		"lvm.c",
+		"lzio.c",
+		"**.h"
 	}
 
 	defines
 	{
 		"_CRT_SECURE_NO_WARNINGS"
+	}
+
+	includedirs
+	{
+		"%{prj.location}/src"
 	}
 
 	filter "system:windows"
